@@ -1,16 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    background: #0f172a;
-    color: white;
+    font-family: 'Poppins', sans-serif;
+    background: #0b0f19;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+section {
+    padding: 80px 10%;
     text-align: center;
-    margin-top: 100px;
-    font-family: Arial, sans-serif;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
 }
 
 p {
-    color: #94a3b8;
+    color: #b0b3c0;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* HERO */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top right, #1c2333, #0b0f19);
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.primary {
+    background: gold;
+    color: black;
+}
+
+.primary:hover {
+    transform: scale(1.05);
+}
+
+.secondary {
+    border: 2px solid gold;
+    color: gold;
+}
+
+.secondary:hover {
+    background: gold;
+    color: black;
+}
+
+/* ABOUT ICONS */
+
+.about-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.icon-card {
+    padding: 20px 30px;
+    border: 1px solid #2a2f45;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.icon-card:hover {
+    background: #141a2b;
+    transform: translateY(-5px);
+}
+
+/* SERVICES */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    padding: 30px;
+    background: #141a2b;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: #1c2333;
+}
+
+/* CTA */
+
+.cta {
+    background: linear-gradient(90deg, #1c2333, #0b0f19);
+}
+
+/* FOOTER */
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #070b14;
+    color: #777;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
 }
