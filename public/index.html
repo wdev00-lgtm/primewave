@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 </head>
 <body>
 
@@ -60,12 +62,12 @@
 <section class="contact reveal">
     <h2>Contact Us</h2>
 
-    <form action="/contact" method="POST" class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn primary">Send Message</button>
-    </form>
+ <form id="contact-form" class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn primary">Send Message</button>
+</form>
 
     <div class="contact-info">
         <p>Email: primewave@gmail.com</p>
@@ -94,6 +96,24 @@
 
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
+</script>
+<script>
+    (function() {
+        emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+            .then(function() {
+                alert("Message sent successfully!");
+                document.getElementById("contact-form").reset();
+            }, function(error) {
+                alert("Failed to send message. Please try again.");
+                console.error(error);
+            });
+    });
 </script>
 
 </body>
