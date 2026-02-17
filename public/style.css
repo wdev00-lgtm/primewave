@@ -219,3 +219,46 @@ footer {
 .whatsapp-btn:hover {
     transform: scale(1.1);
 }
+/* PORTFOLIO */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.portfolio-card {
+    background: #141a2b;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    background: #1c2333;
+}
+/* DETAILED SERVICES */
+
+.service-details {
+    background: #0f1524;
+}
+
+.detail-block {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #141a2b;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.detail-block:hover {
+    transform: translateY(-5px);
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
