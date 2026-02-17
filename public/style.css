@@ -33,13 +33,20 @@ p {
 }
 
 /* HERO */
-
 .hero {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle at top right, #1c2333, #0b0f19);
+    background: linear-gradient(270deg, #0b0f19, #111827, #1c2333);
+    background-size: 600% 600%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero p {
