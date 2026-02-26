@@ -1,21 +1,45 @@
+/* GLOBAL RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #0b0f19;
-    color: #ffffff;
-    line-height: 1.6;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0b0f1a, #111827);
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* SECTION BASE */
 section {
-    padding: 80px 10%;
+    padding: 80px 8%;
     text-align: center;
 }
 
+/* GLASS CONTAINER */
+.hero,
+.about,
+.services,
+.service-details,
+.portfolio,
+.cta,
+.contact {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+    box-shadow: 0 0 40px rgba(79, 156, 255, 0.1);
+}
+
+/* HEADINGS */
 h1 {
     font-size: 3rem;
     font-weight: 800;
@@ -27,53 +51,26 @@ h2 {
 }
 
 p {
-    color: #b0b3c0;
-    max-width: 700px;
-    margin: 20px auto;
-}
-
-/* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(270deg, #0b0f19, #111827, #1c2333);
-    background-size: 600% 600%;
-    animation: gradientMove 12s ease infinite;
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.hero p {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-}
-
-.hero-buttons {
-    margin-top: 30px;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 15px auto;
 }
 
 /* BUTTONS */
-
 .btn {
     display: inline-block;
     padding: 12px 28px;
     margin: 10px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
-    border-radius: 30px;
     transition: 0.3s ease;
 }
 
 .primary {
-    background: gold;
-    color: black;
+    background: #4f9cff;
+    color: white;
+    box-shadow: 0 0 15px rgba(79,156,255,0.6);
 }
 
 .primary:hover {
@@ -81,100 +78,46 @@ p {
 }
 
 .secondary {
-    border: 2px solid gold;
-    color: gold;
+    border: 2px solid #4f9cff;
+    color: #4f9cff;
 }
 
 .secondary:hover {
-    background: gold;
-    color: black;
+    background: #4f9cff;
+    color: white;
 }
 
-/* ABOUT ICONS */
-
-.about-icons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
-
-.icon-card {
-    padding: 20px 30px;
-    border: 1px solid #2a2f45;
-    border-radius: 12px;
+/* CARDS */
+.card,
+.icon-card,
+.detail-block,
+.portfolio-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255,255,255,0.1);
     transition: 0.3s ease;
 }
 
-.icon-card:hover {
-    background: #141a2b;
-    transform: translateY(-5px);
+.card:hover,
+.icon-card:hover,
+.detail-block:hover,
+.portfolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(79,156,255,0.3);
 }
 
-/* SERVICES */
-
-.service-grid {
+/* GRID */
+.service-grid,
+.portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     margin-top: 40px;
 }
 
-.card {
-    padding: 30px;
-    background: #141a2b;
-    border-radius: 12px;
-    transition: 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    background: #1c2333;
-}
-
-/* CTA */
-
-.cta {
-    background: linear-gradient(90deg, #1c2333, #0b0f19);
-}
-
-/* FOOTER */
-
-footer {
-    padding: 20px;
-    text-align: center;
-    background: #070b14;
-    color: #777;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    section {
-        padding: 60px 6%;
-    }
-}
-/* SCROLL REVEAL */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* CONTACT SECTION */
-
+/* CONTACT FORM */
 .contact-form {
     max-width: 600px;
     margin: 40px auto;
@@ -186,11 +129,10 @@ footer {
 .contact-form input,
 .contact-form textarea {
     padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: #141a2b;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
     color: white;
-    font-size: 14px;
 }
 
 .contact-form textarea {
@@ -198,67 +140,50 @@ footer {
     resize: none;
 }
 
-.contact-info {
-    margin-top: 30px;
-    color: #b0b3c0;
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
 }
+
+/* SOCIAL ICONS */
+.social-icons a {
+    color: #4f9cff;
+    font-size: 22px;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* FLOATING WHATSAPP */
 .whatsapp-btn {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    background: #25D366;
+    background: #4f9cff;
     color: white;
-    font-size: 24px;
-    padding: 15px 18px;
+    font-size: 22px;
+    padding: 14px 16px;
     border-radius: 50%;
-    text-decoration: none;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 0 20px rgba(79,156,255,0.6);
     transition: 0.3s ease;
 }
 
 .whatsapp-btn:hover {
     transform: scale(1.1);
 }
-/* PORTFOLIO */
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
 }
-
-.portfolio-card {
-    background: #141a2b;
-    padding: 25px;
-    border-radius: 12px;
-    transition: 0.3s ease;
-}
-
-.portfolio-card:hover {
-    transform: translateY(-8px);
-    background: #1c2333;
-}
-/* DETAILED SERVICES */
-
-.service-details {
-    background: #0f1524;
-}
-
-.detail-block {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #141a2b;
-    border-radius: 12px;
-    transition: 0.3s ease;
-}
-
-.detail-block:hover {
-    transform: translateY(-5px);
-}
-html {
-    scroll-behavior: smooth;
-}
-
-
